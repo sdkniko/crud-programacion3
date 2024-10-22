@@ -42,7 +42,7 @@ const UserTaskCrud = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('https://backend-piii-24-main-one.vercel.app/api/task');
+      const response = await fetch('https://backend-piii-24-main-one.vercel.app/api/tasks');
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -85,7 +85,7 @@ const UserTaskCrud = () => {
 
   const createTask = async (taskData) => {
     try {
-      const response = await fetch('https://backend-piii-24-main-one.vercel.app/api/task', {
+      const response = await fetch('https://backend-piii-24-main-one.vercel.app/api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const UserTaskCrud = () => {
 
   const updateTask = async (id, taskData) => {
     try {
-      const response = await fetch(`https://backend-piii-24-main-one.vercel.app/api/task/${id}`, {
+      const response = await fetch(`https://backend-piii-24-main-one.vercel.app/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ const UserTaskCrud = () => {
 
   const deleteTask = async (id) => {
     try {
-      await fetch(`https://backend-piii-24-main-one.vercel.app/api/task/${id}`, {
+      await fetch(`https://backend-piii-24-main-one.vercel.app/api/tasks/${id}`, {
         method: 'DELETE',
       });
       fetchTasks();
